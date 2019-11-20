@@ -1,0 +1,14 @@
+<a [routerLink]="['/']">Home</a>
+<br>
+<p>{{title}}</p>
+<!-- the below div will appear if there are errors -->
+<div *ngIf="errs.length > 0"> 
+    <p>{{errs}}</p>
+</div>
+
+<form (submit)="addAuthorEvent()">
+    <label>Name:</label><br>
+    <input type="text" name="name" [(ngModel)]="newAuthor.name" placeholder="Leslie Jones"/><br>
+    <input type="submit" class="btn btn-primary btn-sm" value="Submit">
+</form>
+<button [routerLink]="['/']" type="button" class="btn btn-danger btn-sm">Cancel</button>
